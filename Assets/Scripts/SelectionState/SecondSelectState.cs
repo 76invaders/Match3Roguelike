@@ -11,7 +11,6 @@ public class SecondSelectState : BaseState
 
     public override void SelectTile(Vector2 selectedTile)
     {
-        Debug.Log("Переключено на второй статус");
         CompareTiles(_firstTile, selectedTile);
         ClearTilesData();
         _board.SwitchState(new FirstSelectState());
@@ -21,13 +20,11 @@ public class SecondSelectState : BaseState
     {
         if (Vector2.Distance(oldTile, newTile) == 1)
         {
-            Debug.Log("Сменить тайлы");
             _board.SwapTiles(oldTile, newTile);
             _board.board.tiles[(int)newTile.x, (int)newTile.y].UnSelectTile();
         }
         else
         {
-            Debug.Log("Отменить выделение");
             _board.board.tiles[(int)oldTile.x, (int)oldTile.y].UnSelectTile();
         }
     }

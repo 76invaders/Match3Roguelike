@@ -1,4 +1,3 @@
-using UnityEditor.U2D.Path;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
@@ -7,8 +6,11 @@ public class Tile : MonoBehaviour
 {
     private Image _sprite;
     private Gem _gem;
+    public Gem gem => _gem;
     private const float _tweenSpeed = 0.5f;
     private Vector3 _scaleSize = new Vector3(1.2f, 1.2f, 1.2f);
+
+    private bool _toDestroy = false;
 
     private void Awake()
     {

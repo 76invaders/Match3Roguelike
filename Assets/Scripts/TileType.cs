@@ -1,4 +1,4 @@
-enum TileType
+public enum TileType
 {
     Red,
     Green,

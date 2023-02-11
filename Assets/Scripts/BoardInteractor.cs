@@ -4,9 +4,11 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(Board))]
+[RequireComponent(typeof(MatchCheker))]
 public class BoardInteractor : MonoBehaviour, IPointerClickHandler
 {
     private RectTransform _rect;
+    private MatchCheker _matchChecker;
     private Board _board;
     private BaseState _state;
     private Vector2 _selectedPosition;
@@ -15,6 +17,7 @@ public class BoardInteractor : MonoBehaviour, IPointerClickHandler
 
     private void Awake()
     {
+        _matchChecker = GetComponent<MatchCheker>();
         _board = GetComponent<Board>();
         _rect = GetComponent<RectTransform>();
         Debug.Log(_selectedPosition);
@@ -56,6 +59,7 @@ public class BoardInteractor : MonoBehaviour, IPointerClickHandler
 
         (_board.tiles[(int)firstTile.x, (int)firstTile.y], _board.tiles[(int)secondTile.x, (int)secondTile.y]) =
             (_board.tiles[(int)secondTile.x, (int)secondTile.y], _board.tiles[(int)firstTile.x, (int)firstTile.y]);
-    }
 
+        _matchChecker.Check(firstTile, secondTile);
+    }
 }

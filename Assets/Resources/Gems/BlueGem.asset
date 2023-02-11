@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be26044ee2924fe4c8242ee521467322, type: 3}
   m_Name: BlueGem
   m_EditorClassIdentifier: 
-  tileType: 2
+  _tileType: 2
   _image: {fileID: 21300000, guid: efd8f878d8aba3842b1b7f3342a044ed, type: 3}
+  _points: 100

@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be26044ee2924fe4c8242ee521467322, type: 3}
   m_Name: GreenGem
   m_EditorClassIdentifier: 
-  tileType: 1
+  _tileType: 1
   _image: {fileID: 21300000, guid: 17916adff7a87df498e93df9bfe5ee48, type: 3}
+  _points: 200
